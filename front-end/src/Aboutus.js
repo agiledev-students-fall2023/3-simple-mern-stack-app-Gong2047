@@ -13,6 +13,7 @@ import Message from './Message'
 const Aboutus = props => {
     const [about, setAbout] = useState([])
     const [img, setImg] = useState([])
+    const [note, setNote] = useState('')
 
     // const about = "I'm a student in NYU, and I'm a part of the Agile development course this semester. \n This website is a part of the assignment in the Agile development course.\n I love programming and web development. I'm looking forward to working with you!"
     
@@ -24,6 +25,7 @@ const Aboutus = props => {
       .then(response => {
         setAbout(response.data.aboutData.content);
         setImg(response.data.aboutData.image);
+        setNote(response.data.aboutData.note);
       })
   }
 
@@ -37,7 +39,7 @@ const Aboutus = props => {
 
       <p>{about}</p>
       <br/>
-      <p>I don't have a photo of myself, So I'll just put my GitHub profile picture here:</p>
+      <p>{note}</p>
       <img src={img} alt="aboutus" />
     </>
   )
