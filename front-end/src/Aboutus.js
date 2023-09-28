@@ -36,7 +36,9 @@ const Aboutus = props => {
       <h1>About us</h1>
 
       <p>{about}</p>
-        <img src={img} alt="aboutus" />
+      <br/>
+      <p>I don't have a photo of myself, So I'll just put my GitHub profile picture here:</p>
+      <img src={img} alt="aboutus" />
     </>
   )
 }
