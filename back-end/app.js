@@ -44,16 +44,7 @@ app.get('/messages', async (req, res) => {
 app.get('/aboutus', async (req, res) => {
     // load all messages from database
     try {
-      let aboutData = await AboutInfo.findOne({})
-      if (aboutData == null){
-        aboutData = await AboutInfo.create({
-            content: "I'm a student in NYU, and I'm a part of the Agile development course this semester. \n" +
-            ' This website is a part of the assignment in the Agile development course.\n' +
-            " I love programming and web development. I'm looking forward to working with you!",
-            image: 'https://avatars.githubusercontent.com/u/113075181?v=4',
-            note: "I don't have a photo of myself, So I'll just put my GitHub profile picture here:",
-        })
-    }
+      const aboutData = await AboutInfo.findOne({})
       res.json({
         aboutData: aboutData,
         status: 'all good',

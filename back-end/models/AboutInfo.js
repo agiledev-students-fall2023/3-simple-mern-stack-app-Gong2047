@@ -11,10 +11,6 @@ const InfoSchema = new Schema(
       type: String,
       required: true,
     },
-    note: {
-        type: String,
-        required: true,
-      },
   }
 )
 
